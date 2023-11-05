@@ -1,6 +1,7 @@
 #include "logix/sinks/ConsoleSink.h"
 #include "logix/misc/Common.h"
 #include "logix/misc/Utils.h"
+
 #include <iostream>
 
 namespace logix

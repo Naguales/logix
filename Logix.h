@@ -63,7 +63,18 @@ namespace logix
         Logix::instance().setThreadPool(threadPool);
     }
 
+    /**
+    * Call this method before utilizing the logger.
+    * @param [in] async - specifies whether to use the asynchronous version of the logger
+    *                     with a thread pool or the synchronous version.
+    */
     void defaultInitialization(bool async = true);
+
+    /**
+     * Call this method after you've finished using the asynchronous logger.
+     * NB: This workaround is temporarily utilized to ensure the proper finalization of the thread pool
+     * and the destruction of sinks; improvements will be made later.
+     */
     void finalize();
 
     Logger* loggerPtr();
@@ -75,8 +86,8 @@ namespace logix
      */
     struct LogWrapper
     {
-        LogWrapper(LogLevel level)
-            : m_logMessage(level) {}
+        LogWrapper(LogLevel level, const char* filename, int line, const char* func)
+            : m_logMessage(level, filename, line, func) {}
         ~LogWrapper();
 
         inline std::ostringstream& oss() { return m_oss; }
@@ -87,7 +98,7 @@ namespace logix
 
 } // namespace logix
 
-#define LOG_CALL(level) logix::LogWrapper(level)
+#define LOG_CALL(level) logix::LogWrapper(level, __FILE__, __LINE__, __FUNCTION__)
 #define LOG(level) LOG_CALL(level).oss()
 
 #define LOG_TRACE LOG(logix::LogLevel::Trace)

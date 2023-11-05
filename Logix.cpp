@@ -2,7 +2,6 @@
 #include "logix/sinks/FileSink.h"
 #include "logix/sinks/ConsoleSink.h"
 #include "logix/AsyncLogger.h"
-#include "logix/misc/scope_guard.hpp"
 
 #include <iostream>
 #include <algorithm>
@@ -85,47 +84,3 @@ namespace logix
 	}
 
 } // namespace logix
-
-void test() {
-	std::ostringstream s;
-	s << "Greetings from the thread [" << std::this_thread::get_id() << "]!";
-	std::string id = s.str();
-	for (size_t i = 0; i < 100; ++i) {
-		LOG_ERROR << id;
-		LOG_WARNING << id;
-		LOG_INFO << id;
-		LOG_DEBUG << id;
-		LOG_TRACE << id;
-	}
-}
-
-int main()
-{
-	logix::defaultInitialization();
-
-	auto onExit = sg::make_scope_guard([&]() { logix::finalize(); });
-
-	LOG_INFO << "START";
-	std::chrono::time_point<std::chrono::steady_clock> start = std::chrono::steady_clock::now();
-
-	auto threadCount = std::thread::hardware_concurrency();
-	std::vector<std::shared_ptr<std::thread>> threads(threadCount);
-	for (auto& thread : threads) {
-		thread.reset(new std::thread(test));
-	}
-
-	LOG_INFO << "JOIN";
-
-	for (auto& thread : threads) {
-		thread->join();
-	}
-
-	std::chrono::duration<double, std::milli> elapsedTimeMs = std::chrono::steady_clock::now() - start;
-	double logMessageCount = 5 * 100 * threadCount;
-	LOG_INFO << fmt::format("Number of threads {}", threadCount);
-	LOG_INFO << fmt::format("Number of log messages {}", logMessageCount);
-	LOG_INFO << fmt::format("Elapsed time {} ms", elapsedTimeMs.count());
-	LOG_INFO << fmt::format("Time per message logged {} ms", elapsedTimeMs.count() / logMessageCount);
-
-	return 0;
-}

@@ -33,6 +33,7 @@ namespace logix
         LogMessage(LogLevel level, const std::chrono::system_clock::time_point& timestamp, const std::string& module,
             const Source& src, const std::string& message);
         LogMessage(LogLevel level, const Source& src, const std::string& message);
+        LogMessage(LogLevel level, const char* filename, int line, const char* func);
         LogMessage(LogLevel level, const std::string& message);
         LogMessage(LogLevel level);
 

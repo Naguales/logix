@@ -12,6 +12,7 @@ endif()
 project ("logix")
 
 include_directories (${PROJECT_SOURCE_DIR}/include)
+include_directories (${PROJECT_SOURCE_DIR}/test)
 include_directories (${PROJECT_SOURCE_DIR})
 
 # Add source to this project's executable.
@@ -29,7 +30,9 @@ add_executable (logix
 	"include/logix/ThreadPool.h" "src/ThreadPool.cpp"
 	"include/logix/Logger.h" "src/Logger.cpp"
 	"include/logix/AsyncLogger.h" "src/AsyncLogger.cpp"
-	"Logix.h" "Logix.cpp")
+	"Logix.h" "Logix.cpp"
+	"test/Benchmarks.h" "test/Benchmarks.cpp"
+	"src/App.cpp")
 
 if (CMAKE_VERSION VERSION_GREATER 3.12)
   set_property(TARGET logix PROPERTY CXX_STANDARD 11)

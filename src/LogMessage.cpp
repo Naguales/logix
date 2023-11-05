@@ -16,6 +16,8 @@ namespace logix
         m_module(module), m_source(src), m_message(message) {}
     LogMessage::LogMessage(LogLevel level, const Source& src, const std::string& message)
         : LogMessage(level, std::chrono::system_clock::now(), "", src, message) {}
+    LogMessage::LogMessage(LogLevel level, const char* filename, int line, const char* func)
+        : LogMessage(level, std::chrono::system_clock::now(), "", Source(filename, line, func), "") {}
     LogMessage::LogMessage(LogLevel level, const std::string& message)
         : LogMessage(level, std::chrono::system_clock::now(), "", Source{}, message) {}
     LogMessage::LogMessage(LogLevel level)
