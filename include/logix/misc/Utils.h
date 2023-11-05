@@ -21,6 +21,12 @@ namespace logix
 	std::string parentPath(const std::string& givenPath);
 
 	/**
+	 * @param [in] givenPath - the path to a directiry or file.
+	 * @return the generic-format filename component of the path.
+	 */
+	std::string fileName(const std::string& givenPath);
+
+	/**
 	 * Verify if the path, whether it's a file or a directory, exists.
 	 * @param [in] givenPath - the path to a directiry or file.
 	 * @return true if the path exists; otherwise, return false.

@@ -22,6 +22,12 @@ namespace logix
 		return pos != std::string::npos ? givenPath.substr(0, pos) : std::string{};
 	}
 
+    std::string fileName(const std::string& givenPath)
+    {
+        auto pos = givenPath.find_last_of(preferredSeparator);
+        return pos != std::string::npos ? givenPath.substr(pos + 1) : std::string{};
+    }
+
     bool pathExists(const std::string& givenPath) noexcept
     {
         #ifdef _WIN32
@@ -99,7 +105,7 @@ namespace logix
         std::string output;
 
         if (src.m_filename && src.m_function)
-            output.append(fmt::format("\t[{}:{}\t{}]", src.m_filename, src.m_line, src.m_function));
+            output.append(fmt::format("\t[{}:{}   {}]", src.m_filename, src.m_line, src.m_function));
 
         return output;
     }

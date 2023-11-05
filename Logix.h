@@ -8,6 +8,9 @@
 #include <mutex>
 #include <sstream>
 
+#define __FILENAME__ std::max<const char*>(__FILE__,\
+    std::max(strrchr(__FILE__, '\\')+1, strrchr(__FILE__, '/')+1))
+
 namespace logix
 {
 
@@ -98,7 +101,7 @@ namespace logix
 
 } // namespace logix
 
-#define LOG_CALL(level) logix::LogWrapper(level, __FILE__, __LINE__, __FUNCTION__)
+#define LOG_CALL(level) logix::LogWrapper(level, __FILENAME__, __LINE__, __FUNCTION__)
 #define LOG(level) LOG_CALL(level).oss()
 
 #define LOG_TRACE LOG(logix::LogLevel::Trace)
