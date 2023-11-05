@@ -34,8 +34,9 @@ add_executable (logix
 	"include/logix/AsyncLogger.h" "src/AsyncLogger.cpp"
 	"Logix.h" "Logix.cpp"
 	"test/Benchmarks.h" "test/Benchmarks.cpp"
+	"test/UnitTests.h" "test/UnitTests.cpp"
 	"examples/Examples.h" "examples/Examples.cpp"
-	"src/App.cpp" "test/UnitTests.h" "test/UnitTests.cpp")
+	"src/App.cpp")
 
 if (CMAKE_VERSION VERSION_GREATER 3.12)
   set_property(TARGET logix PROPERTY CXX_STANDARD 11)
