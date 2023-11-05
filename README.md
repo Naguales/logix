@@ -8,6 +8,7 @@
 - [Logix](#logix)
 - [Features](#features)
 - [Basic Usage](#basic-usage)
+- [Output](#output)
 - [License](#license)
 
 # Logix
@@ -102,6 +103,8 @@ void main()
 }
 ```
 
+## Output
+
 ## License
 Logix is licensed under the [MIT License](http://opensource.org/licenses/MIT)
 
@@ -110,4 +113,4 @@ Your use of the source code for these subcomponents is subject to the terms and 
 
 - ([MIT License](http://opensource.org/licenses/MIT)) {fmt} (https://github.com/fmtlib/fmt/blob/master/LICENSE)
 - ([BSD 3-Clause](https://opensource.org/license/bsd-3-clause/)) googletest (https://github.com/google/googletest/blob/main/LICENSE)
-- ([The Unlicense] scope_guard (https://github.com/ricab/scope_guard/blob/main/LICENSE)
+- (The Unlicense) scope_guard (https://github.com/ricab/scope_guard/blob/main/LICENSE)
