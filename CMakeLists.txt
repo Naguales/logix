@@ -21,6 +21,7 @@ add_executable (logix
 	"fmt/format.h" "fmt/format.cc"
 	"fmt/ostream.h" "fmt/ostream.cc"
 	"fmt/printf.h" "fmt/printf.cc"
+	"test/googletest/gtest.h" "test/googletest/gtest-all.cc"
 	"include/logix/misc/Common.h" "include/logix/misc/scope_guard.hpp"
 	"include/logix/misc/Utils.h" "src/misc/Utils.cpp"
 	"include/logix/LogLevel.h" "src/LogLevel.cpp"
@@ -34,7 +35,7 @@ add_executable (logix
 	"Logix.h" "Logix.cpp"
 	"test/Benchmarks.h" "test/Benchmarks.cpp"
 	"examples/Examples.h" "examples/Examples.cpp"
-	"src/App.cpp")
+	"src/App.cpp" "test/UnitTests.h" "test/UnitTests.cpp")
 
 if (CMAKE_VERSION VERSION_GREATER 3.12)
   set_property(TARGET logix PROPERTY CXX_STANDARD 11)

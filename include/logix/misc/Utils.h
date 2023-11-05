@@ -83,6 +83,4 @@ namespace logix
 	 */
 	std::string logMessageToString(const LogMessage& msg);
 
-	std::tm localtime(const std::time_t&) noexcept;
-
 } // namespace logix

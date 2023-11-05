@@ -1,4 +1,5 @@
 #include "test/Benchmarks.h"
+#include "test/UnitTests.h"
 #include "examples/Examples.h"
 #include "fmt/format.h"
 
@@ -17,6 +18,7 @@ int main()
 		"utilizing one thread as a producer of log messages.\n");
 	fmt::print_colored(fmt::YELLOW, "5. An example of the asynchronous logger usage.\n");
 	fmt::print_colored(fmt::YELLOW, "6. An example of the synchronous logger usage.\n");
+	fmt::print_colored(fmt::MAGENTA, "7. Run all unit tests.\n");
 	int testNumber = 1;
 	std::cin >> testNumber;
 
@@ -38,6 +40,9 @@ int main()
 		break;
 	case 6:
 		syncLoggerUsageExample();
+		break;
+	case 7:
+		runUnitTests();
 		break;
 	default:
 		test::asyncMultithreadedTest();

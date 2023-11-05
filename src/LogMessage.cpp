@@ -7,7 +7,7 @@ namespace logix
 {
 
     Source::Source()
-        : m_filename(__FILE__), m_line(__LINE__), m_function(__FUNCTION__) {}
+        : m_filename(__FILENAME__), m_line(__LINE__), m_function(__FUNCTION__) {}
 
     LogMessage::LogMessage(LogLevel level, const std::chrono::system_clock::time_point& timestamp, const std::string& module,
         const Source& src, const std::string& message)

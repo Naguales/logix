@@ -16,6 +16,9 @@
 #include <string>
 #include <exception>
 
+#define __FILENAME__ std::max<const char*>(__FILE__,\
+    std::max(strrchr(__FILE__, '\\')+1, strrchr(__FILE__, '/')+1))
+
 namespace logix
 {
 

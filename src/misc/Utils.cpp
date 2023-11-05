@@ -155,16 +155,4 @@ namespace logix
         return output;
     }
 
-    std::tm localtime(const std::time_t& time) noexcept
-    {
-        #ifdef _WIN32
-            std::tm tm;
-            ::localtime_s(&tm, &time);
-        #else
-            std::tm tm;
-            ::localtime_r(&time, &tm);
-        #endif
-        return tm;
-    }
-
 } // namespace logix
