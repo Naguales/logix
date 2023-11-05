@@ -3,15 +3,6 @@
 
 #include <algorithm>
 
-#ifdef _WIN32
-    #ifdef max
-        #undef max
-    #endif
-    #ifdef min
-        #undef min
-    #endif
-#endif
-
 namespace logix
 {
 

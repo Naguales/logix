@@ -9,9 +9,9 @@ namespace test
 
 	void asyncTestWorker()
 	{
-		std::ostringstream s;
-		s << "Greetings from the thread [" << std::this_thread::get_id() << "]!";
-		std::string msg = s.str();
+		std::ostringstream ss;
+		ss << "Greetings from the thread [" << std::this_thread::get_id() << "]!";
+		std::string msg = ss.str();
 		for (size_t i = 0; i < messageCount; ++i) {
 			LOG_ERROR << msg;
 			LOG_WARNING << msg;

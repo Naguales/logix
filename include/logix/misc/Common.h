@@ -4,6 +4,13 @@
 
 #ifdef _WIN32
 	#include <windows.h>
+	
+	#ifdef max
+		#undef max
+	#endif
+	#ifdef min
+		#undef min
+	#endif
 #endif // Windows
 
 #include <string>
