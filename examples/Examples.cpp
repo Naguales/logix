@@ -16,6 +16,10 @@ void asyncLoggerUsageExample()
 	// The default initialization for using the asynchronous logger.
 	logix::defaultInitialization();
 
+	// By default, the trace log level is utilized.
+	// Setting the log level is optional.
+	logix::loggerPtr()->setLevel(logix::LogLevel::Trace);
+
 	// Cleanup is required after you've finished using the asynchronous logger.
 	auto onExit = sg::make_scope_guard([&]() { logix::finalize(); });
 
@@ -38,6 +42,7 @@ void syncLoggerUsageExample()
 {
 	// The default initialization for using the synchronous logger.
 	logix::defaultInitialization(false);
+	logix::loggerPtr()->setLevel(logix::LogLevel::Debug);
 
 	// Log to all registered sinks, in this case: file and console.
 	LOG_ERROR << "This represents an ERROR log entry";
