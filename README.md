@@ -9,6 +9,7 @@
 - [Features](#features)
 - [Basic Usage](#basic-usage)
 - [Output](#output)
+- [Architecture](#architecture)
 - [License](#license)
 
 # Logix
@@ -105,6 +106,8 @@ void main()
 
 ## Output
 [![LogixConsole.png](https://github.com/Naguales/logix/assets/12149564/c35d6ea7-2760-4804-824a-25e0752c8465)](https://github.com/Naguales/logix/assets/12149564/c35d6ea7-2760-4804-824a-25e0752c8465)
+
+## Architecture
 
 ## License
 Logix is licensed under the [MIT License](http://opensource.org/licenses/MIT)
