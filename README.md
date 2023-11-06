@@ -98,7 +98,7 @@ The following message is logged a total of 100,000 times, with varying thread co
 The table below showcases latency measurements per message in nanoseconds (ns).
 
 | Thread count | Latency per message, ns |
-|--------------|:-----------------------:|
+|:------------:|:-----------------------:|
 |      1       |          1257           |
 |      4       |           679           |
 |      8       |           710           |
