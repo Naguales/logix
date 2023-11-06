@@ -8,6 +8,7 @@
 - [Logix](#logix)
 - [Features](#features)
 - [Basic Usage](#basic-usage)
+- [Performance](#performance)
 - [Output](#output)
 - [Architecture](#architecture)
 - [License](#license)
@@ -87,6 +88,26 @@ void main()
 		logLevelToString(logix::LogLevel::Trace), std::numeric_limits<double>::max());
 }
 ```
+## Performance
+
+### Latency
+
+The following message is logged a total of 100,000 times, with varying thread counts:
+`LOG_INFO << fmt::format("Reference message {}: {} ~ {}", i, 1.61803398875, M_PI)`.
+
+The table below showcases latency measurements per message in nanoseconds (ns).
+
+| Thread count | Latency per message, ns |
+|--------------|:-----------------------:|
+|      1       |          1257           |
+|      4       |           679           |
+|      8       |           710           |
+|     16       |           957           |
+
+Test machine configuration:
+- OS: Windows 11
+- CPU: Intel(R) Core(TM) i7-11700K @ 3.60GHz
+- RAM: 64 GB
 
 ## Output
 [![LogixConsole.png](https://github.com/Naguales/logix/assets/12149564/c35d6ea7-2760-4804-824a-25e0752c8465)](https://github.com/Naguales/logix/assets/12149564/c35d6ea7-2760-4804-824a-25e0752c8465)

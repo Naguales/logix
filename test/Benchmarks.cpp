@@ -20,7 +20,15 @@ namespace test
 		}
 	}
 
-	void test(bool async = true, bool multithreaded = true)
+	void referenceAsyncTestWorker()
+	{
+		constexpr size_t msgCount = 100000;
+		for (size_t i = 0; i < msgCount; ++i) {
+			LOG_INFO << fmt::format("Reference message {}: {} ~ {}", i, 1.61803398875, M_PI);
+		}
+	}
+
+	void test(bool async = true, bool multithreaded = true, unsigned int threadCount = std::thread::hardware_concurrency())
 	{
 		logix::defaultInitialization(async);
 
@@ -31,7 +39,6 @@ namespace test
 
 		std::chrono::time_point<std::chrono::steady_clock> start = std::chrono::steady_clock::now();
 
-		auto threadCount = std::thread::hardware_concurrency();
 		if (multithreaded) {
 			std::vector<std::shared_ptr<std::thread>> threads(threadCount);
 			for (auto& thread : threads) {
