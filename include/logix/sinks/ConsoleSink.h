@@ -1,7 +1,6 @@
 #pragma once
 
 #include "logix/sinks/Sink.h"
-#include "fmt/format.h"
 
 #include <unordered_map>
 

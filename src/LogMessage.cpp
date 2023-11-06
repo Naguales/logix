@@ -1,5 +1,4 @@
 #include "logix/LogMessage.h"
-#include "logix/misc/Common.h"
 
 #include <thread>
 

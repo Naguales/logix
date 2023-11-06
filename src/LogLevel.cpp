@@ -1,6 +1,5 @@
 #include "logix/LogLevel.h"
 #include "logix/misc/Common.h"
-#include "fmt/format.h"
 
 #include <array>
 #include <unordered_map>

@@ -1,6 +1,7 @@
 #pragma once
 
 #include "logix/Logger.h"
+#include "logix/misc/Utils.h"
 
 #include <iostream>
 

@@ -1,10 +1,7 @@
 #include "test/UnitTests.h"
 #include "test/googletest/gtest.h"
 
-#include "logix/misc/Common.h"
 #include "logix/misc/Utils.h"
-#include "logix/LogLevel.h"
-#include "logix/LogMessage.h"
 
 // LogLevel
 // -------------------------------------------------

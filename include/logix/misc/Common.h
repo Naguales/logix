@@ -1,6 +1,7 @@
 #pragma once
 
 #include "fmt/format.h"
+#include "logix/misc/scope_guard.hpp"
 
 #ifdef _WIN32
 	#include <windows.h>
@@ -14,7 +15,13 @@
 #endif // Windows
 
 #include <string>
+#include <vector>
+#include <chrono>
 #include <exception>
+#include <numeric>
+
+#define _USE_MATH_DEFINES
+#include <math.h>
 
 #define __FILENAME__ std::max<const char*>(__FILE__,\
     std::max(strrchr(__FILE__, '\\')+1, strrchr(__FILE__, '/')+1))

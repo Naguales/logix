@@ -1,9 +1,7 @@
 #pragma once
 
 #include "LogLevel.h"
-
-#include <string>
-#include <chrono>
+#include "logix/misc/Common.h"
 
 namespace logix
 {

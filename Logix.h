@@ -1,12 +1,10 @@
 ﻿#pragma once
 
-#include "logix/ThreadPool.h"
-#include "logix/Logger.h"
-#include "fmt/format.h"
+#include "logix/AsyncLogger.h"
 
-#include <type_traits>
 #include <mutex>
 #include <sstream>
+#include <type_traits>
 
 namespace logix
 {

@@ -34,14 +34,6 @@ It includes essential logger entities and architecture.
 ## Basic Usage
 ```c++
 #include "Logix.h"
-#include "logix/LogLevel.h"
-#include "logix/misc/scope_guard.hpp"
-#include "fmt/format.h"
-
-#include <numeric>
-
-#define _USE_MATH_DEFINES
-#include <math.h>
 
 /** 
  * An example of the asynchronous logger usage.
@@ -73,14 +65,6 @@ void main()
 
 ```c++
 #include "Logix.h"
-#include "logix/LogLevel.h"
-#include "logix/misc/scope_guard.hpp"
-#include "fmt/format.h"
-
-#include <numeric>
-
-#define _USE_MATH_DEFINES
-#include <math.h>
 
 /**
  * An example of the synchronous logger usage.

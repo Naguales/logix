@@ -1,4 +1,5 @@
 #include "logix/AsyncLogger.h"
+#include "logix/misc/Utils.h"
 
 namespace logix
 {

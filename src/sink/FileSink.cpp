@@ -1,7 +1,5 @@
 #include "logix/sinks/FileSink.h"
-#include "logix/misc/Common.h"
 #include "logix/misc/Utils.h"
-#include "fmt/format.h"
 
 namespace logix
 {

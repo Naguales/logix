@@ -1,10 +1,6 @@
 #pragma once
 
 #include "logix/sinks/Sink.h"
-#include "logix/misc/Utils.h"
-#include "logix/misc/Common.h"
-
-#include <vector>
 
 #define LOGIX_EXCEPTION_HANDLER                                                                      \
             catch (const std::exception& e) {                                                        \

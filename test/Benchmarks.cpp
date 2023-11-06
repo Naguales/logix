@@ -1,6 +1,5 @@
 #include "test/Benchmarks.h"
 #include "Logix.h"
-#include "logix/misc/scope_guard.hpp"
 
 namespace test
 {
@@ -50,7 +49,7 @@ namespace test
 
 		std::chrono::duration<double, std::milli> elapsedTimeMs = std::chrono::steady_clock::now() - start;
 		constexpr size_t testedLogLevelCount = 5;
-		double logMessageCount = testedLogLevelCount * messageCount * threadCount;
+		size_t logMessageCount = testedLogLevelCount * messageCount * threadCount;
 		LOG_INFO << fmt::format("Number of threads {}", threadCount);
 		LOG_INFO << fmt::format("Number of log messages {}", logMessageCount);
 		LOG_INFO << fmt::format("Elapsed time {} ms", elapsedTimeMs.count());

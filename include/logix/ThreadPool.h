@@ -2,10 +2,9 @@
 
 #include "logix/LogMessage.h"
 
-#include <vector>
 #include <thread>
-#include <condition_variable>
 #include <queue>
+#include <condition_variable>
 
 namespace logix
 {
